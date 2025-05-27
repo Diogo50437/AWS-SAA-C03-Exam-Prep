@@ -867,7 +867,7 @@ C. Purchase a 1-year Compute Savings Plan for the front end and API layer.
 
 141.A company runs a web-based portal that provides users with global breaking news, local alerts, and weather updates. The portal delivers each user a personalized view by using mixture of static and dynamic content. Content is served over HTTPS through an API server running on an Amazon EC2 instance behind an Application Load Balancer (ALB). The company wants the portal to provide this content to its users across the world as quickly as possible.
 How should a solutions architect design the application to ensure the LEAST amount of latency for all users? 
-B. Deploy the application stack in two AWS Regions. Use an Amazon Route 53 latency routing policy to serve all content from the ALB in the closest Region.
+A. Deploy the application stack in a single AWS Region. Use Amazon CloudFront to serve all static and dynamic content by specifying the ALB as an origin.
 
 142.A gaming company is designing a highly available architecture. The application runs on a modified Linux kernel and supports only UDP-based traffic. The company needs the front-end tier to provide the best possible user experience. That tier must have low latency, route traffic to the nearest edge location, and provide static IP addresses for entry into the application endpoints.
 What should a solutions architect do to meet these requirements? 
@@ -894,7 +894,7 @@ B. Use Reserved Instances for the baseline level of usage. Use Spot instances fo
 Which storage option meets these requirements MOST cost-effectively? 
 B. Store the logs in Amazon S3. Use S3 Lifecycle policies to move logs more than 1 month old to S3 Glacier Deep Archive. 
 
-IMP>>>>>>148. A company has a data ingestion workflow that includes the following components:
+148. A company has a data ingestion workflow that includes the following components:
 An Amazon Simple Notification Service (Amazon SNS) topic that receives notifications about new data deliveries
 An AWS Lambda function that processes and stores the data
 The ingestion workflow occasionally fails because of network connectivity issues. When failure occurs, the corresponding data is not ingested unless the company manually reruns the job.
@@ -909,14 +909,10 @@ A. Create an Amazon Simple Queue Service (Amazon SQS) FIFO queue to hold message
 What should the solutions architect do to meet these requirements? 
 A. Create Amazon CloudWatch composite alarms where possible.
 
-IMP>>>>>151.A company wants to migrate its on-premises data center to AWS. According to the company's compliance requirements, the company can use only the ap-northeast-3 Region. Company administrators are not permitted to connect VPCs to the internet.
+151.A company wants to migrate its on-premises data center to AWS. According to the company's compliance requirements, the company can use only the ap-northeast-3 Region. Company administrators are not permitted to connect VPCs to the internet.
 Which solutions will meet these requirements? (Choose two.) 
-
-    A. Use AWS Control Tower to implement data residency guardrails to deny internet access and deny access to all AWS Regions except ap-northeast-3.
-    B. Use rules in AWS WAF to prevent internet access. Deny access to all AWS Regions except ap-northeast-3 in the AWS account settings.
-    C. Use AWS Organizations to configure service control policies (SCPS) that prevent VPCs from gaining internet access. Deny access to all AWS Regions except ap-northeast-3.
-    D. Create an outbound rule for the network ACL in each VPC to deny all traffic from 0.0.0.0/0. Create an IAM policy for each user to prevent the use of any AWS Region other than ap-northeast-3.
-    E. Use AWS Config to activate managed rules to detect and alert for internet gateways and to detect and alert for new resources deployed outside of ap-northeast-3.
+A. Use AWS Control Tower to implement data residency guardrails to deny internet access and deny access to all AWS Regions except ap-northeast-3.
+C. Use AWS Organizations to configure service control policies (SCPS) that prevent VPCs from gaining internet access. Deny access to all AWS Regions except ap-northeast-3.
 
 152.A company uses a three-tier web application to provide training to new employees. The application is accessed for only 12 hours every day. The company is using an Amazon RDS for MySQL DB instance to store information and wants to minimize costs.
 What should a solutions architect do to meet these requirements? 
